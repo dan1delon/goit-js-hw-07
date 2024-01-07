@@ -30,10 +30,13 @@ const images = [
 
 const gallery = document.querySelector('.gallery')
   
-images.forEach(img => {
+images.map(img => {
+  const liItem = document.createElement('li');
   const image = document.createElement('img');
-  gallery.append(image);
   image.src = img.url;
   image.alt = img.alt;
+  liItem.append(image);
+  gallery.append(liItem);
+  liItem.classList.add('item-photo');
   image.classList.add('images');
 });
